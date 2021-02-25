@@ -75,4 +75,20 @@ public class PlayerTest {
         assertThat(player.totalAmountBet())
                 .isEqualTo(120);
     }
+
+    @Test
+    public void playerBets100GetsBonus() {
+        Player player = new Player();
+        player.deposits(150);
+
+        //Question: does the player get the bonus just for placing a
+        //          bet of 100 or more?  Or do they get the bonus when
+        //          they win after placing a bet of 100 or more?  Going to
+        //          assume they need to win to receive the bonus.
+        player.bets(100);
+        player.wins();
+
+        assertThat(player.balance())
+                .isEqualTo(250 + 10);
+    }
 }
