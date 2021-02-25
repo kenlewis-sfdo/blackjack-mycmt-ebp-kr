@@ -14,4 +14,25 @@ public class Player {
     public int bet() {
         return playerBet;
     }
+
+    public void deposits(int amount) {
+        playerBalance += amount;
+    }
+
+    public void bets(int betAmount) {
+        playerBet = betAmount;
+        playerBalance -= betAmount;
+    }
+
+    public void wins() {
+        playerBalance += playerBet * 2;
+    }
+
+    public void loses() {
+        playerBalance += playerBet * 0;
+    }
+
+    public void ties() {
+        playerBalance += playerBet * 1;
+    }
 }

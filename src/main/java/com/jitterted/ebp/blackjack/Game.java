@@ -194,27 +194,26 @@ public class Game {
   }
 
   public void playerDeposits(int amount) {
-    playerBalance += amount;
+    player.deposits(amount);
   }
 
   public void playerBets(int betAmount) {
-    playerBet = betAmount;
-    playerBalance -= betAmount;
+    player.bets(betAmount);
   }
 
   public int playerBalance() {
-    return playerBalance;
+    return player.balance();
   }
 
   public void playerWins() {
-    playerBalance += playerBet * 2;
+    player.wins();
   }
 
   public void playerLoses() {
-    playerBalance += playerBet * 0;
+      player.loses();
   }
 
   public void playerTies() {
-    playerBalance += playerBet * 1;
+      player.ties();
   }
 }
