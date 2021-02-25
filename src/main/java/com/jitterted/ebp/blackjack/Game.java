@@ -13,8 +13,6 @@ public class Game {
   private Hand dealerHand = new Hand();
   private Hand playerHand = new Hand();
   private Player player = new Player();
-  private int playerBalance = player.balance();
-  private int playerBet = player.bet();
 
   public static void main(String[] args) {
     displayWelcomeScreen();
