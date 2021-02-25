@@ -82,10 +82,11 @@ public class Game {
     while (!playerBusted) {
       displayGameState();
       String playerChoice = inputFromPlayer().toLowerCase();
-      if (playerChoice.startsWith("s")) {
+      //todo:extract Player class
+      if (playerStands(playerChoice)) {
         break;
       }
-      if (playerChoice.startsWith("h")) {
+      if (playerHits(playerChoice)) {
         drawCardIntoPlayerHand();
         playerBusted = playerHand.isBusted();
       } else {
@@ -101,6 +102,14 @@ public class Game {
     displayFinalGameState();
 
     handleGameOutcome();
+  }
+
+  private boolean playerHits(String playerChoice) {
+    return playerChoice.startsWith("h");
+  }
+
+  private boolean playerStands(String playerChoice) {
+    return playerChoice.startsWith("s");
   }
 
   private void dealerPlays() {
