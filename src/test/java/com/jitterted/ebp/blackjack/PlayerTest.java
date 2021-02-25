@@ -60,4 +60,19 @@ public class PlayerTest {
         assertThat(player.balance())
                 .isEqualTo(150);
     }
+
+    @Test
+    public void playerWithBalanceOf150Bets40And80TotalAmountBetIs120() {
+        Player player = new Player();
+        player.deposits(150);
+
+        player.bets(40);
+        player.ties();
+
+        player.bets(80);
+        player.ties();
+
+        assertThat(player.totalAmountBet())
+                .isEqualTo(120);
+    }
 }
