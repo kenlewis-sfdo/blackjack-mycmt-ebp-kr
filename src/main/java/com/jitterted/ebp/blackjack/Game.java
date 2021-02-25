@@ -81,7 +81,6 @@ public class Game {
     while (!playerBusted) {
       displayGameState();
       String playerChoice = inputFromPlayer().toLowerCase();
-      //todo:extract Player class - bet actions and balance
       if (playerStands(playerChoice)) {
         break;
       }
