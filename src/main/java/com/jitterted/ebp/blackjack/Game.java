@@ -12,8 +12,9 @@ public class Game {
 
   private Hand dealerHand = new Hand();
   private Hand playerHand = new Hand();
-  private int playerBalance = 0;
-  private int playerBet = 0;
+  private Player player = new Player();
+  private int playerBalance = player.balance();
+  private int playerBet = player.bet();
 
   public static void main(String[] args) {
     displayWelcomeScreen();
@@ -82,7 +83,7 @@ public class Game {
     while (!playerBusted) {
       displayGameState();
       String playerChoice = inputFromPlayer().toLowerCase();
-      //todo:extract Player class
+      //todo:extract Player class - bet actions and balance
       if (playerStands(playerChoice)) {
         break;
       }
